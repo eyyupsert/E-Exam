@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F99655AF-405D-49F3-B084-8EB645A849A4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ProjeSınamÖdevi</RootNamespace>
+    <AssemblyName>ProjeSınamÖdevi</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frm_Giris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Giris.Designer.cs">
+      <DependentUpon>frm_Giris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_OgrenciMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_OgrenciMenu.Designer.cs">
+      <DependentUpon>frm_OgrenciMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_OgretmenSoruEkleme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_OgretmenSoruEkleme.Designer.cs">
+      <DependentUpon>frm_OgretmenSoruEkleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_OgretmenMenusu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_OgretmenMenusu.Designer.cs">
+      <DependentUpon>frm_OgretmenMenusu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_OgretmenSonuclariGor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_OgretmenSonuclariGor.Designer.cs">
+      <DependentUpon>frm_OgretmenSonuclariGor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_OgrenciSinavSonuc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_OgrenciSinavSonuc.Designer.cs">
+      <DependentUpon>frm_OgrenciSinavSonuc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="frm_OgrenciSinavEkran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_OgrenciSinavEkran.Designer.cs">
+      <DependentUpon>frm_OgrenciSinavEkran.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frm_Giris.resx">
+      <DependentUpon>frm_Giris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_OgrenciMenu.resx">
+      <DependentUpon>frm_OgrenciMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_OgretmenSoruEkleme.resx">
+      <DependentUpon>frm_OgretmenSoruEkleme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_OgretmenMenusu.resx">
+      <DependentUpon>frm_OgretmenMenusu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_OgretmenSonuclariGor.resx">
+      <DependentUpon>frm_OgretmenSonuclariGor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_OgrenciSinavSonuc.resx">
+      <DependentUpon>frm_OgrenciSinavSonuc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frm_OgrenciSinavEkran.resx">
+      <DependentUpon>frm_OgrenciSinavEkran.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLibrary\BusinessLibrary.csproj">
+      <Project>{c2e8bf3e-8cc0-4215-b8d6-df2743477c02}</Project>
+      <Name>BusinessLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CommonLibrary\CommonLibrary.csproj">
+      <Project>{5a24f0d6-e4b5-464b-afd2-8cd34417ded0}</Project>
+      <Name>CommonLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataLibrary\DataLibrary.csproj">
+      <Project>{e88ab23f-fe6f-4313-b5bf-daade63c4e20}</Project>
+      <Name>DataLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
