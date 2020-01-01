@@ -29,17 +29,15 @@ namespace ProjeSınamÖdevi
 
         private void frm_SinavEkrani_Load(object sender, EventArgs e)
         {
-            
             aktiflik();
             bilgi = soruBS.SoruGoruntule();
             eksikler = soruBS.EksikKonuluSoru(Convert.ToInt32(GirisYapanBilgileri.ogrninNosu));
-            progressBar1.ForeColor = Color.Red;
+            lbl_ad.Text = (GirisYapanBilgileri.ogrAd + " " + GirisYapanBilgileri.ogrSoyad);
         }
-
-
+        
         private void aktiflik()
         {
-            btnBasla.Enabled = true;
+            bfnbtn_basla.Enabled = true;
             A.Enabled = false;
             B.Enabled = false;
             C.Enabled = false;
@@ -56,31 +54,147 @@ namespace ProjeSınamÖdevi
             OgrenciCevaplariBusiness ogrCevp = new OgrenciCevaplariBusiness();
             ogrCevp.CevapKontrol((Convert.ToInt32(label1.Text)),bilgi[x].konu,cevaplar,Convert.ToInt32(label5.Text));
         }
-       
-        private void btnBasla_Click(object sender, EventArgs e)
+        
+        private void bfnbtn_basla_Click(object sender, EventArgs e)
         {
-            if (btnBasla.Text != "Sonraki Soru")
+            
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+           if (bnfprgrsbar_süre.Value == 200 || bnfprgrsbar_süre.Value > 20)
+            {
+                bnfprgrsbar_süre.Value -= 1;
+            }
+           else if (bnfprgrsbar_süre.Value<=20 && bnfprgrsbar_süre.Value !=0)
+            {
+                bnfprgrsbar_süre.Value -= 1;
+                bnfprgrsbar_süre.ProgressColor = Color.Red;
+            }
+           else
+            {
+                timer1.Stop();
+                for (int z = y; z < 11; z++)
+                {
+                    cevapKontrol(false);
+                }
+                MessageBox.Show("sınavınız bitmiştir");
+                frm_OgrenciMenu ogrMenu = new frm_OgrenciMenu();
+                ogrMenu.Show();
+                this.Close();
+            }
+        }
+
+        private void A_Click_1(object sender, EventArgs e)
+        {
+            if (A.Name == label2.Text)
+            {
+                dogru++;
+                cevapKontrol(true);
+                A.DisabledColor = Color.Green;
+            }
+            else
+            {
+                yanlis++;
+                cevapKontrol(false);
+                A.DisabledColor = Color.Red;
+            }
+            aktiflik();
+        }
+
+        private void B_Click_1(object sender, EventArgs e)
+        {
+            if (B.Name == label2.Text)
+            {
+                dogru++;
+                cevapKontrol(true);
+                B.DisabledColor = Color.Green;
+            }
+            else
             {
 
-                progressBar1.ForeColor = Color.Red;
-                timer1.Start();
+                yanlis++;
+                cevapKontrol(false);
+                B.DisabledColor = Color.Red;
             }
+            aktiflik();
+
+        }
+
+        private void C_Click_1(object sender, EventArgs e)
+        {
+            if (C.Name == label2.Text)
+            {
+                dogru++;
+                cevapKontrol(true);
+                C.DisabledColor = Color.Green;
+            }
+            else
+            {
+                yanlis++;
+                cevapKontrol(false);
+                C.DisabledColor = Color.Red;
+            }
+            aktiflik();
+        }
+
+        private void D_Click_1(object sender, EventArgs e)
+        {
+            if (D.Name == label2.Text)
+            {
+                dogru++;
+                cevapKontrol(true);
+                D.DisabledColor = Color.Green;
+            }
+            else
+            {
+
+                yanlis++;
+                cevapKontrol(false);
+                D.DisabledColor = Color.Red;
+            }
+            aktiflik();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            DialogResult secenek = MessageBox.Show("Sınavdan çıkmak isdeğnize emin msiniz ? Eğer çıkış yaparsanız diğer sorularınız yanlış olarak değerlendirilecektir", "Uyarı !!!", MessageBoxButtons.YesNo);
+
+            if (secenek == DialogResult.Yes)
+            {
+                for (int z = y; z < 11; z++)
+                {
+                    cevapKontrol(false);
+                }
+                this.Close();
+            }
+        }
+
+        private void bfnbtn_basla_Click_1(object sender, EventArgs e)
+        {
+            lbl_soruSayisi.Text = (y + 1 + ". Soru");
+
+            if (bfnbtn_basla.LabelText != "Sonraki Soru")
+            {
+                timer1.Start();
+                bfnbtn_basla.LabelText = "Sonraki Soru";
+            }
+
             x++;
             y++;
 
-            btnBasla.Enabled = false;
+            A.DisabledColor = Color.Silver;
+            B.DisabledColor = Color.Silver;
+            C.DisabledColor = Color.Silver;
+            D.DisabledColor = Color.Silver;
+
             A.Enabled = true;
             B.Enabled = true;
             C.Enabled = true;
             D.Enabled = true;
+            bfnbtn_basla.Enabled = false;
 
-            A.BackColor = Color.White;
-            B.BackColor = Color.White;
-            C.BackColor = Color.White;
-            D.BackColor = Color.White;
-            btnBasla.Text = "Sonraki Soru";
-
-            if (GirisYapanBilgileri.sınavId==0)
+            if (GirisYapanBilgileri.sınavId == 0)
             {
                 if (x == 11)
                 {
@@ -90,7 +204,7 @@ namespace ProjeSınamÖdevi
                 }
                 else
                 {
-                    txtSoru.Text = bilgi[x].soru;
+                    bnftxt_Soru.Text = bilgi[x].soru;
                     A.Text = bilgi[x].cevapA;
                     B.Text = bilgi[x].cevapB;
                     C.Text = bilgi[x].cevapC;
@@ -101,11 +215,12 @@ namespace ProjeSınamÖdevi
                     label5.Text = bilgi[x].konuId.ToString();
                 }
             }
+
             else
             {
-                if (y<6 && eksikler[y].soru != null)
+                if (y < 6 && eksikler[y].soru != null)
                 {
-                    txtSoru.Text = eksikler[y].soru;
+                    bnftxt_Soru.Text = eksikler[y].soru;
                     A.Text = eksikler[y].cevapA;
                     B.Text = eksikler[y].cevapB;
                     C.Text = eksikler[y].cevapC;
@@ -115,9 +230,9 @@ namespace ProjeSınamÖdevi
                     label3.Text = eksikler[y].konu;
                     label5.Text = bilgi[y].konuId.ToString();
                 }
-                else if (y>=6 || y <11 )
+                else if (y >= 6 && y < 11)
                 {
-                    txtSoru.Text = bilgi[y].soru;
+                    bnftxt_Soru.Text = bilgi[y].soru;
                     A.Text = bilgi[y].cevapA;
                     B.Text = bilgi[y].cevapB;
                     C.Text = bilgi[y].cevapC;
@@ -133,119 +248,9 @@ namespace ProjeSınamÖdevi
                     MessageBox.Show("Geçmiş Olsun...Sınavınız Bitmiştir..");
                     frm_OgrenciMenu ogrMenu = new frm_OgrenciMenu();
                     ogrMenu.Show();
-                    this.Close(); 
+                    this.Close();
                 }
             }
-        }
-        
-        private void A_Click(object sender, EventArgs e)
-        {
-            if (A.Name == label2.Text)
-            {
-                dogru++;
-                cevapKontrol(true);
-                A.BackColor = Color.Green;
-            }
-            else
-            {
-                yanlis++;
-                cevapKontrol(false);
-                A.BackColor = Color.Red;
-            }
-            aktiflik();
-        }
-
-        private void B_Click(object sender, EventArgs e)
-        {
-            if (B.Name == label2.Text)
-            {
-                dogru++;
-                cevapKontrol(true);
-                B.BackColor = Color.Green;
-            }
-            else
-            {
-
-                yanlis++;
-                cevapKontrol(false);
-                B.BackColor = Color.Red;
-            }
-            aktiflik();
-        }
-
-        private void C_Click(object sender, EventArgs e)
-        {
-            if (C.Name == label2.Text)
-            {
-                dogru++;
-                cevapKontrol(true);
-                C.BackColor = Color.Green;
-            }
-            else
-            {
-                yanlis++;
-                cevapKontrol(false);
-                C.BackColor = Color.Red;
-            }
-            aktiflik();
-        }
-
-        private void D_Click(object sender, EventArgs e)
-        {
-            if (D.Name == label2.Text)
-            {
-                dogru++;
-                cevapKontrol(true);
-                D.BackColor = Color.Green;
-            }
-            else
-            {
-
-                yanlis++;
-                cevapKontrol(false);
-                D.BackColor = Color.Red;
-            }
-            aktiflik();
-        }
-
-        private void frm_SinavEkrani_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (y != 11 && progressBar1.Value !=0)
-            {
-                DialogResult secenek = MessageBox.Show("Sınavdan çıkmak isdeğnize emin msiniz ? Eğer çıkış yaparsanız diğer sorularınız yanlış olarak değerlendirilecektir", "Uyarı !!!", MessageBoxButtons.YesNo);
-
-                if (secenek == DialogResult.Yes)
-                {
-                    for (int z =y; z<11; z++)
-                    {
-                        cevapKontrol(false);
-                    }
-                    e.Cancel = false;
-                }
-                else
-                {
-                    e.Cancel = true;
-                }
-            }
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-           if(progressBar1.Value != 0)
-            {
-                progressBar1.Value -= 10;
-            }
-           else
-            {
-                timer1.Stop();
-                for (int z = y; z < 11; z++)
-                {
-                    cevapKontrol(false);
-                }
-                MessageBox.Show("sınıavınız bitmiştir");
-                this.Close();
-            }
-              
         }
     }
 }

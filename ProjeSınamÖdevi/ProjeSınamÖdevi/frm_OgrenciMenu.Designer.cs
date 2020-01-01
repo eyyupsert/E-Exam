@@ -42,7 +42,7 @@
             // 
             // bnfbtn_Sinavol
             // 
-            this.bnfbtn_Sinavol.BackColor = System.Drawing.Color.LightGray;
+            this.bnfbtn_Sinavol.BackColor = System.Drawing.Color.White;
             this.bnfbtn_Sinavol.color = System.Drawing.Color.White;
             this.bnfbtn_Sinavol.colorActive = System.Drawing.Color.SeaGreen;
             this.bnfbtn_Sinavol.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -53,7 +53,7 @@
             this.bnfbtn_Sinavol.ImageZoom = 50;
             this.bnfbtn_Sinavol.LabelPosition = 29;
             this.bnfbtn_Sinavol.LabelText = "Sınav Ol";
-            this.bnfbtn_Sinavol.Location = new System.Drawing.Point(353, 188);
+            this.bnfbtn_Sinavol.Location = new System.Drawing.Point(347, 201);
             this.bnfbtn_Sinavol.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.bnfbtn_Sinavol.Name = "bnfbtn_Sinavol";
             this.bnfbtn_Sinavol.Size = new System.Drawing.Size(155, 131);
@@ -62,7 +62,7 @@
             // 
             // bunifuTileButton1
             // 
-            this.bunifuTileButton1.BackColor = System.Drawing.Color.LightGray;
+            this.bunifuTileButton1.BackColor = System.Drawing.Color.White;
             this.bunifuTileButton1.color = System.Drawing.Color.White;
             this.bunifuTileButton1.colorActive = System.Drawing.Color.SeaGreen;
             this.bunifuTileButton1.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -73,7 +73,7 @@
             this.bunifuTileButton1.ImageZoom = 50;
             this.bunifuTileButton1.LabelPosition = 28;
             this.bunifuTileButton1.LabelText = "Sınav Sonuçları";
-            this.bunifuTileButton1.Location = new System.Drawing.Point(586, 188);
+            this.bunifuTileButton1.Location = new System.Drawing.Point(588, 201);
             this.bunifuTileButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bunifuTileButton1.Name = "bunifuTileButton1";
             this.bunifuTileButton1.Size = new System.Drawing.Size(155, 131);
