@@ -26,13 +26,13 @@ namespace ProjeSınamÖdevi
         public Ogretmen ogrtm;
         OgretmenDB ogrtmnGiris;
 
-        private void btnOgrenci_Click(object sender, EventArgs e)
+        private void bnf_btnOgrGiris_Click(object sender, EventArgs e)
         {
             ogrGiris = new OgrencilerDB();
-            ogr = ogrGiris.OgrenciGetir(txtAd.Text, txtSifre.Text);
-            if (ogr != null && ogr.ogrKullaniciAdi == txtAd.Text && ogr.ogrSifre == txtSifre.Text)
+            ogr = ogrGiris.OgrenciGetir(bnf_txtOgradi.Text, bnf_txtOgrparola.Text);
+            if (ogr != null && ogr.ogrKullaniciAdi == bnf_txtOgradi.Text && ogr.ogrSifre == bnf_txtOgrparola.Text)
             {
-                GirisYapanBilgileri.ogrninAdi = txtAd.Text;
+                GirisYapanBilgileri.ogrninAdi = bnf_txtOgradi.Text;
                 GirisYapanBilgileri.ogrninNosu = ogr.ogrNo.ToString();
                 GirisYapanBilgileri.sınavId = ogr.sinavId;
                 frm_OgrenciMenu frm = new frm_OgrenciMenu();
@@ -46,11 +46,11 @@ namespace ProjeSınamÖdevi
         }
 
 
-        private void btnOgrtmen_Click(object sender, EventArgs e)
+        private void btn_btnOgrtmenGir_Click(object sender, EventArgs e)
         {
             ogrtmnGiris = new OgretmenDB();
-            ogrtm = ogrtmnGiris.OgretmenGetir(txtOgrtmnAd.Text, txtOgrtmnSifre.Text);
-            if (ogrtm != null && ogrtm.ogrtmnKulAdi == txtOgrtmnAd.Text && ogrtm.ogrtmnSifre == txtOgrtmnSifre.Text)
+            ogrtm = ogrtmnGiris.OgretmenGetir(bnf_txtOgrtmenAd.Text, bnf_txtOgrtmenSifre.Text);
+            if (ogrtm != null && ogrtm.ogrtmnKulAdi == bnf_txtOgrtmenAd.Text && ogrtm.ogrtmnSifre == bnf_txtOgrtmenSifre.Text)
             {
                 frm_OgretmenMenusu frmMenu = new frm_OgretmenMenusu();
                 frmMenu.Show();
@@ -60,11 +60,27 @@ namespace ProjeSınamÖdevi
             {
                 MessageBox.Show("Hatali Giris");
             }
+
         }
 
-        private void frm_Giris_Load(object sender, EventArgs e)
+        private void bnf_txtOgrparola_Enter(object sender, EventArgs e)
         {
+            bnf_txtOgrparola.Text = "";
+        }
 
+        private void bnf_txtOgrtmenAd_Enter(object sender, EventArgs e)
+        {
+            bnf_txtOgrtmenAd.Text = "";
+        }
+
+        private void bnf_txtOgrtmenSifre_Enter(object sender, EventArgs e)
+        {
+            bnf_txtOgrtmenSifre.Text = "";
+        }
+
+        private void bnf_txtOgradi_MouseClick(object sender, MouseEventArgs e)
+        {
+            bnf_txtOgradi.Text = "";
         }
     }
 }

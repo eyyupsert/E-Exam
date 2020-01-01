@@ -13,7 +13,7 @@ namespace DataLibrary
     {
         public static SqlConnection BaglantiGetir()
         {
-            SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-OEAIEJR\SQLEXPRESS;Initial Catalog=SinavProjesi;Integrated Security=True");
+            SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-3C9JAN3\DOGAN;Initial Catalog=SinavProjesi;Integrated Security=True");
             baglanti.Open();
             return baglanti;
         }
