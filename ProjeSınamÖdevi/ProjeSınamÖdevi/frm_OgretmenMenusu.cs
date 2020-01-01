@@ -20,21 +20,26 @@ namespace ProjeSınamÖdevi
             InitializeComponent();
         }
 
-        private void btnSoruEkle_Click(object sender, EventArgs e)
+        private void btnSoruEkle_Click_1(object sender, EventArgs e)
         {
             frm_OgretmenSoruEkleme soruEkle = new frm_OgretmenSoruEkleme();
             soruEkle.Show();
             this.Hide();
         }
 
-        private void btnSonuclariGoster_Click(object sender, EventArgs e)
+
+
+        private void btnSonuclariGoster_Click_1(object sender, EventArgs e)
         {
             frm_OgretmenSonuclariGor frmSonuclar = new frm_OgretmenSonuclariGor();
             frmSonuclar.Show();
             this.Hide();
+
         }
 
-        private void frm_OgretmenMenusu_FormClosing(object sender, FormClosingEventArgs e)
+
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
             DialogResult secenek = MessageBox.Show("Ana menüye dönmek istiyor musunuz ? ", "Uyarı !!!", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
@@ -42,12 +47,13 @@ namespace ProjeSınamÖdevi
             {
                 frm_Giris frmGiris = new frm_Giris();
                 frmGiris.Show();
-                e.Cancel = false;
+                this.Close();
             }
-            else
-            {
-                e.Cancel = true;
-            }
+        }
+
+        private void frm_OgretmenMenusu_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

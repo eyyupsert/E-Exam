@@ -32,9 +32,9 @@
             this.bnf_txtKullaniciAd = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bnf_txtKullaniciSifre = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bnf_btnGirisYap = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.pcrebxCikis = new System.Windows.Forms.PictureBox();
             this.mtrdibtnOgretmen = new MetroFramework.Controls.MetroRadioButton();
             this.mtrbtnOgrenci = new MetroFramework.Controls.MetroRadioButton();
+            this.pcrebxCikis = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pcrebxCikis)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,19 +108,6 @@
             this.bnf_btnGirisYap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bnf_btnGirisYap.Click += new System.EventHandler(this.bnf_btnGirisYap_Click);
             // 
-            // pcrebxCikis
-            // 
-            this.pcrebxCikis.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pcrebxCikis.ErrorImage")));
-            this.pcrebxCikis.Image = ((System.Drawing.Image)(resources.GetObject("pcrebxCikis.Image")));
-            this.pcrebxCikis.InitialImage = ((System.Drawing.Image)(resources.GetObject("pcrebxCikis.InitialImage")));
-            this.pcrebxCikis.Location = new System.Drawing.Point(385, -1);
-            this.pcrebxCikis.Name = "pcrebxCikis";
-            this.pcrebxCikis.Size = new System.Drawing.Size(32, 31);
-            this.pcrebxCikis.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcrebxCikis.TabIndex = 20;
-            this.pcrebxCikis.TabStop = false;
-            this.pcrebxCikis.Click += new System.EventHandler(this.pcrebxCikis_Click);
-            // 
             // mtrdibtnOgretmen
             // 
             this.mtrdibtnOgretmen.AutoSize = true;
@@ -156,6 +143,19 @@
             this.mtrbtnOgrenci.MouseLeave += new System.EventHandler(this.mtrbtnOgrenci_MouseLeave);
             this.mtrbtnOgrenci.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mtrbtnOgrenci_MouseMove);
             // 
+            // pcrebxCikis
+            // 
+            this.pcrebxCikis.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pcrebxCikis.ErrorImage")));
+            this.pcrebxCikis.Image = ((System.Drawing.Image)(resources.GetObject("pcrebxCikis.Image")));
+            this.pcrebxCikis.InitialImage = ((System.Drawing.Image)(resources.GetObject("pcrebxCikis.InitialImage")));
+            this.pcrebxCikis.Location = new System.Drawing.Point(385, -1);
+            this.pcrebxCikis.Name = "pcrebxCikis";
+            this.pcrebxCikis.Size = new System.Drawing.Size(32, 31);
+            this.pcrebxCikis.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcrebxCikis.TabIndex = 20;
+            this.pcrebxCikis.TabStop = false;
+            this.pcrebxCikis.Click += new System.EventHandler(this.pcrebxCikis_Click);
+            // 
             // frm_Giris
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -181,9 +181,9 @@
         private Bunifu.Framework.UI.BunifuMetroTextbox bnf_txtKullaniciAd;
         private Bunifu.Framework.UI.BunifuMetroTextbox bnf_txtKullaniciSifre;
         private Bunifu.Framework.UI.BunifuThinButton2 bnf_btnGirisYap;
-        private System.Windows.Forms.PictureBox pcrebxCikis;
         private MetroFramework.Controls.MetroRadioButton mtrdibtnOgretmen;
         private MetroFramework.Controls.MetroRadioButton mtrbtnOgrenci;
+        private System.Windows.Forms.PictureBox pcrebxCikis;
     }
 }
 
