@@ -26,14 +26,6 @@ namespace ProjeSınamÖdevi
 
         private void btnIstatistikGor_Click(object sender, EventArgs e)
         {
-            frm_OgrenciSinavSonuc frmsinav = new frm_OgrenciSinavSonuc();
-            frmsinav.Show();
-            this.Hide();
-        }
-
-        private void frm_OgrenciMenu_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
         }
 
         private void bnfbtn_Sinavol_Click(object sender, EventArgs e)
@@ -60,6 +52,13 @@ namespace ProjeSınamÖdevi
                 frmGiris.Show();
                 this.Close();
             }
+        }
+
+        private void bnfbtn_sinavSonuc_Click(object sender, EventArgs e)
+        {
+            frm_OgrenciSinavSonuc frmsinav = new frm_OgrenciSinavSonuc();
+            frmsinav.Show();
+            this.Hide();
         }
     }
 }

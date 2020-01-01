@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_OgrenciMenu));
             this.bnfbtn_Sinavol = new Bunifu.Framework.UI.BunifuTileButton();
-            this.bunifuTileButton1 = new Bunifu.Framework.UI.BunifuTileButton();
+            this.bnfbtn_sinavSonuc = new Bunifu.Framework.UI.BunifuTileButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.bnflbl_ogrAd = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -60,24 +60,25 @@
             this.bnfbtn_Sinavol.TabIndex = 2;
             this.bnfbtn_Sinavol.Click += new System.EventHandler(this.bnfbtn_Sinavol_Click);
             // 
-            // bunifuTileButton1
+            // bnfbtn_sinavSonuc
             // 
-            this.bunifuTileButton1.BackColor = System.Drawing.Color.White;
-            this.bunifuTileButton1.color = System.Drawing.Color.White;
-            this.bunifuTileButton1.colorActive = System.Drawing.Color.SeaGreen;
-            this.bunifuTileButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTileButton1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.bunifuTileButton1.ForeColor = System.Drawing.Color.Black;
-            this.bunifuTileButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuTileButton1.Image")));
-            this.bunifuTileButton1.ImagePosition = 19;
-            this.bunifuTileButton1.ImageZoom = 50;
-            this.bunifuTileButton1.LabelPosition = 28;
-            this.bunifuTileButton1.LabelText = "Sınav Sonuçları";
-            this.bunifuTileButton1.Location = new System.Drawing.Point(588, 201);
-            this.bunifuTileButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.bunifuTileButton1.Name = "bunifuTileButton1";
-            this.bunifuTileButton1.Size = new System.Drawing.Size(155, 131);
-            this.bunifuTileButton1.TabIndex = 3;
+            this.bnfbtn_sinavSonuc.BackColor = System.Drawing.Color.White;
+            this.bnfbtn_sinavSonuc.color = System.Drawing.Color.White;
+            this.bnfbtn_sinavSonuc.colorActive = System.Drawing.Color.SeaGreen;
+            this.bnfbtn_sinavSonuc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bnfbtn_sinavSonuc.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.bnfbtn_sinavSonuc.ForeColor = System.Drawing.Color.Black;
+            this.bnfbtn_sinavSonuc.Image = ((System.Drawing.Image)(resources.GetObject("bnfbtn_sinavSonuc.Image")));
+            this.bnfbtn_sinavSonuc.ImagePosition = 19;
+            this.bnfbtn_sinavSonuc.ImageZoom = 50;
+            this.bnfbtn_sinavSonuc.LabelPosition = 28;
+            this.bnfbtn_sinavSonuc.LabelText = "Sınav Sonuçları";
+            this.bnfbtn_sinavSonuc.Location = new System.Drawing.Point(588, 201);
+            this.bnfbtn_sinavSonuc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bnfbtn_sinavSonuc.Name = "bnfbtn_sinavSonuc";
+            this.bnfbtn_sinavSonuc.Size = new System.Drawing.Size(155, 131);
+            this.bnfbtn_sinavSonuc.TabIndex = 3;
+            this.bnfbtn_sinavSonuc.Click += new System.EventHandler(this.bnfbtn_sinavSonuc_Click);
             // 
             // panel2
             // 
@@ -131,7 +132,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.bunifuTileButton1);
+            this.Controls.Add(this.bnfbtn_sinavSonuc);
             this.Controls.Add(this.bnfbtn_Sinavol);
             this.Controls.Add(this.pcrebxCikis);
             this.Controls.Add(this.panel2);
@@ -150,7 +151,7 @@
         #endregion
 
         private Bunifu.Framework.UI.BunifuTileButton bnfbtn_Sinavol;
-        private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton1;
+        private Bunifu.Framework.UI.BunifuTileButton bnfbtn_sinavSonuc;
         private System.Windows.Forms.Panel panel2;
         private Bunifu.Framework.UI.BunifuCustomLabel bnflbl_ogrAd;
         private System.Windows.Forms.PictureBox pictureBox1;

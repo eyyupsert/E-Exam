@@ -29,22 +29,28 @@ namespace ProjeSınamÖdevi
 
         private void frm_SinavBilgileri_Load(object sender, EventArgs e)
         {
+            groupBox1.Visible = false;
+            lbl_ograd.Text = (GirisYapanBilgileri.ogrAd + " " + GirisYapanBilgileri.ogrSoyad);
+
             sinavBilgi = sinavBS.SinavIcerigi(Convert.ToInt32(GirisYapanBilgileri.ogrninNosu));
+
             for (int i = 0; i <sinavBilgi.Count; i++)
             {
-                comboBox1.Items.Add((sinavBilgi[i].sinavId)+1);
+                bunifuDropdown1.Items.Add((sinavBilgi[i].sinavId)+1);
             }
         }
+        
 
-        private void btnSinavBilgi_Click(object sender, EventArgs e)
+
+        private void btnSonuclar_Click(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem == null)
+            if (bunifuDropdown1.selectedIndex == -1)
             { MessageBox.Show("Lütfen Görüntülenecek sinav bilgisiniz seçiniz !!"); }
             else
             {
                 for (int i = 0; i < sinavBilgi.Count; i++)
                 {
-                    if (sinavBilgi[i].sinavId == Convert.ToInt32(comboBox1.SelectedIndex))
+                    if (sinavBilgi[i].sinavId == Convert.ToInt32(bunifuDropdown1.selectedIndex))
                     {
                         secilenSinav = i;
                     }
@@ -61,15 +67,38 @@ namespace ProjeSınamÖdevi
                 }
             }
         }
-        private void btnGenelSonuclar_Click(object sender, EventArgs e)
+
+
+
+        private void btnSinavBilgi_Click(object sender, EventArgs e)
         {
-           grid_GenelOranTablosu.RowCount = sinavBilgi.Count;
-           for (int i = 0; i < sinavBilgi.Count; i++)
+            groupBox1.Visible = true;
+            bunifuDropdown1.Visible = true;
+            chart2.Visible = true;
+            btnSonuclar.Visible = true;
+            chart1.Visible = false;
+            grid_GenelOranTablosu.Visible = false;
+        }
+
+
+
+        private void btnGenelSonuclar_Click_1(object sender, EventArgs e)
+        {
+            groupBox1.Visible = true;
+            bunifuDropdown1.Visible = false;
+            chart2.Visible = false;
+            btnSonuclar.Visible = false;
+            chart1.Visible = true;
+            grid_GenelOranTablosu.Visible = true;
+
+
+            grid_GenelOranTablosu.RowCount = sinavBilgi.Count;
+            for (int i = 0; i < sinavBilgi.Count; i++)
             {
-                    grid_GenelOranTablosu.Rows[i].Cells[0].Value = ((sinavBilgi[i].sinavId)+1);
-                    grid_GenelOranTablosu.Rows[i].Cells[1].Value = sinavBilgi[i].dogruSay;
-                    grid_GenelOranTablosu.Rows[i].Cells[2].Value = sinavBilgi[i].yanlisSay;
-                    grid_GenelOranTablosu.Rows[i].Cells[3].Value = sinavBilgi[i].basYuzdesi;
+                grid_GenelOranTablosu.Rows[i].Cells[0].Value = ((sinavBilgi[i].sinavId) + 1);
+                grid_GenelOranTablosu.Rows[i].Cells[1].Value = sinavBilgi[i].dogruSay;
+                grid_GenelOranTablosu.Rows[i].Cells[2].Value = sinavBilgi[i].yanlisSay;
+                grid_GenelOranTablosu.Rows[i].Cells[3].Value = sinavBilgi[i].basYuzdesi;
             }
             foreach (var item in chart1.Series)
             {
@@ -77,14 +106,18 @@ namespace ProjeSınamÖdevi
             }
             for (int k = 0; k < sinavBilgi.Count; k++)
             {
-                chart1.Series["Genel Sonuçlar"].Points.AddXY(((sinavBilgi[k].sinavId)+1).ToString() + ". Sınav", sinavBilgi[k].basYuzdesi);
+                chart1.Series["Genel Sonuçlar"].Points.AddXY(((sinavBilgi[k].sinavId) + 1).ToString() + ". Sınav", sinavBilgi[k].basYuzdesi);
             }
         }
 
-        private void frm_SinavBilgileri_FormClosing(object sender, FormClosingEventArgs e)
+
+
+
+        private void pcrebxCikis_Click(object sender, EventArgs e)
         {
             frm_OgrenciMenu frmMenu = new frm_OgrenciMenu();
             frmMenu.Show();
+            this.Close();
         }
     }
 }

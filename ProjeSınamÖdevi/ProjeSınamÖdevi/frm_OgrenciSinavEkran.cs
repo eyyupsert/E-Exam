@@ -54,11 +54,6 @@ namespace ProjeSınamÖdevi
             OgrenciCevaplariBusiness ogrCevp = new OgrenciCevaplariBusiness();
             ogrCevp.CevapKontrol((Convert.ToInt32(label1.Text)),bilgi[x].konu,cevaplar,Convert.ToInt32(label5.Text));
         }
-        
-        private void bfnbtn_basla_Click(object sender, EventArgs e)
-        {
-            
-        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -166,6 +161,9 @@ namespace ProjeSınamÖdevi
                 {
                     cevapKontrol(false);
                 }
+                sinavlarBS.GecmisSinavlar((10-dogru), dogru);
+                frm_OgrenciMenu frmOgrMenu = new frm_OgrenciMenu();
+                frmOgrMenu.Show();
                 this.Close();
             }
         }
