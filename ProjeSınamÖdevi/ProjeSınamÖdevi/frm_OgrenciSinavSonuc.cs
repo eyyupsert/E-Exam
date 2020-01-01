@@ -50,7 +50,7 @@ namespace ProjeSınamÖdevi
             {
                 for (int i = 0; i < sinavBilgi.Count; i++)
                 {
-                    if (sinavBilgi[i].sinavId == Convert.ToInt32(bunifuDropdown1.selectedIndex))
+                    if (sinavBilgi[i].sinavId == bunifuDropdown1.selectedIndex)
                     {
                         secilenSinav = i;
                     }
@@ -79,6 +79,7 @@ namespace ProjeSınamÖdevi
             chart1.Visible = false;
             grid_GenelOranTablosu.Visible = false;
         }
+
 
 
 

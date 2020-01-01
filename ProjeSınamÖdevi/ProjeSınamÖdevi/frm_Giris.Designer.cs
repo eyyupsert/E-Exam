@@ -52,13 +52,13 @@
             this.bnf_txtKullaniciAd.isPassword = false;
             this.bnf_txtKullaniciAd.Location = new System.Drawing.Point(51, 144);
             this.bnf_txtKullaniciAd.Margin = new System.Windows.Forms.Padding(4);
-            this.bnf_txtKullaniciAd.MaxLength = 32767;
+            this.bnf_txtKullaniciAd.MaxLength = 20;
             this.bnf_txtKullaniciAd.Name = "bnf_txtKullaniciAd";
             this.bnf_txtKullaniciAd.Size = new System.Drawing.Size(303, 37);
             this.bnf_txtKullaniciAd.TabIndex = 10;
             this.bnf_txtKullaniciAd.Text = "Kullanıcı Adınız";
             this.bnf_txtKullaniciAd.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bnf_txtKullaniciAd.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bnf_txtOgradi_MouseClick);
+            this.bnf_txtKullaniciAd.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bnf_txtKullaniciAd_MouseClick);
             // 
             // bnf_txtKullaniciSifre
             // 
@@ -74,13 +74,13 @@
             this.bnf_txtKullaniciSifre.isPassword = true;
             this.bnf_txtKullaniciSifre.Location = new System.Drawing.Point(51, 207);
             this.bnf_txtKullaniciSifre.Margin = new System.Windows.Forms.Padding(4);
-            this.bnf_txtKullaniciSifre.MaxLength = 32767;
+            this.bnf_txtKullaniciSifre.MaxLength = 11;
             this.bnf_txtKullaniciSifre.Name = "bnf_txtKullaniciSifre";
             this.bnf_txtKullaniciSifre.Size = new System.Drawing.Size(303, 37);
             this.bnf_txtKullaniciSifre.TabIndex = 11;
             this.bnf_txtKullaniciSifre.Text = "Parola";
             this.bnf_txtKullaniciSifre.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bnf_txtKullaniciSifre.Enter += new System.EventHandler(this.bnf_txtOgrparola_Enter);
+            this.bnf_txtKullaniciSifre.Enter += new System.EventHandler(this.bnf_txtKullaniciSifre_Enter);
             // 
             // bnf_btnGirisYap
             // 

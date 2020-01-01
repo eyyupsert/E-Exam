@@ -17,10 +17,16 @@ namespace BusinessLibrary
             return db.OgrenciGetir(ad, sifre);
         }
 
-        public Ogrenciler GuncellemeSinav()
+        public Ogrenciler GuncellemeSinav(int sinavId)
         {
-            return db.OgrenciSinavIdsiGuncelle();
+            return db.OgrenciSinavIdsiGuncelle(sinavId);
         }
- 
+
+        public List<Ogrenciler> SinavIdBilgisiGetir()
+        {
+            return db.SinavIdBilgisi();
+        }
+
+
     }
 }

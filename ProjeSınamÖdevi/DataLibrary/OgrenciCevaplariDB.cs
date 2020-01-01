@@ -11,19 +11,16 @@ namespace DataLibrary
 {
     public class OgrenciCevaplariDB
     {
-        public OgrenciCevaplari OgrenciCevap(int idNo,string konuBilgi,bool cevap,int konuId)
+        public OgrenciCevaplari OgrenciCevap(int idNo,string konuBilgi,bool cevap,int konuId,int sinavId)
         {
             OgrenciCevaplari cev = null;
             using (var connection = Database.BaglantiGetir())
             {
-                var comm = new SqlCommand("insert into tbl_ogrenciCevaplari (sinavId,soruId,ogrNo,konu,cevapNitelik,konuId) values('"+ GirisYapanBilgileri.sınavId + "','" + idNo + "','" + GirisYapanBilgileri.ogrninNosu + "','" + konuBilgi + "','" + cevap + "','" + konuId +"')", connection);
+                var comm = new SqlCommand("insert into tbl_ogrenciCevaplari (sinavId,soruId,ogrNo,konu,cevapNitelik,konuId) values('"+ sinavId + "','" + idNo + "','" + GirisYapanBilgileri.ogrninNosu + "','" + konuBilgi + "','" + cevap + "','" + konuId +"')", connection);
                 comm.ExecuteNonQuery();
                 connection.Close();
             }
             return cev;
         }
-
-
-        
     }
 }

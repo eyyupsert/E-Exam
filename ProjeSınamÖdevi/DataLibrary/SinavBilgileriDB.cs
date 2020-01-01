@@ -10,12 +10,12 @@ namespace DataLibrary
 {
     public class SinavBilgileriDB
     {
-        public SinavBilgileri GecmisSinavGoruntule(int yanlis ,int dogru)
+        public SinavBilgileri GecmisSinavGoruntule(int yanlis ,int dogru,int sinavId)
         {
             SinavBilgileri bilgiler = null;
             using (var connection = Database.BaglantiGetir())
             {
-                var comm = new SqlCommand("insert into tbl_sinavBilgileri (sinavId,yanlisSay,dogruSay,basYuzdesi,ogrNo) values('" + GirisYapanBilgileri.sınavId + "','" + yanlis + "','" + dogru + "','" + (dogru*10) + "','" + GirisYapanBilgileri.ogrninNosu + "')", connection);
+                var comm = new SqlCommand("insert into tbl_sinavBilgileri (sinavId,yanlisSay,dogruSay,basYuzdesi,ogrNo) values('" + sinavId + "','" + yanlis + "','" + dogru + "','" + (dogru*10) + "','" + GirisYapanBilgileri.ogrninNosu + "')", connection);
                 comm.ExecuteNonQuery();
                 connection.Close();
             }

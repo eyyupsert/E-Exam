@@ -12,9 +12,9 @@ namespace BusinessLibrary
     {
         private OgrenciCevaplariDB cevap = new OgrenciCevaplariDB();
 
-        public OgrenciCevaplari CevapKontrol(int idNosu,string konusu,bool cevaplar, int konuId)
+        public OgrenciCevaplari CevapKontrol(int idNosu,string konusu,bool cevaplar, int konuId, int sinavId)
         {
-            return cevap.OgrenciCevap(idNosu,konusu,cevaplar,konuId);
+            return cevap.OgrenciCevap(idNosu,konusu,cevaplar,konuId,sinavId);
         }
     }
 }

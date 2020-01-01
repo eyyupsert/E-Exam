@@ -21,17 +21,10 @@ namespace ProjeSınamÖdevi
         {
             InitializeComponent();
         }
-        public Ogrenciler ogr;
-        OgrencilerDB ogrDB;
 
-        private void btnIstatistikGor_Click(object sender, EventArgs e)
-        {
-        }
 
         private void bnfbtn_Sinavol_Click(object sender, EventArgs e)
         {
-            ogrDB = new OgrencilerDB();
-            ogr = ogrDB.OgrenciSinavIdsiGuncelle();
             frm_OgrenciSinavEkran frmsinav = new frm_OgrenciSinavEkran();
             frmsinav.Show();
             this.Hide();

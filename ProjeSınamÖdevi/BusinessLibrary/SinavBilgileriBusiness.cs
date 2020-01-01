@@ -12,9 +12,9 @@ namespace BusinessLibrary
     {
         public SinavBilgileriDB sinav = new SinavBilgileriDB();
 
-        public SinavBilgileri GecmisSinavlar(int yanlis ,int doru)
+        public SinavBilgileri GecmisSinavlar(int yanlis ,int doru, int sinavId)
         {
-            return sinav.GecmisSinavGoruntule(yanlis,doru);
+            return sinav.GecmisSinavGoruntule(yanlis,doru,sinavId);
         }
 
         public List<SinavBilgileri> SinavIcerigi(int ogrNo)

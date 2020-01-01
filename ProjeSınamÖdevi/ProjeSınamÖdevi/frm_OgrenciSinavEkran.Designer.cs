@@ -40,6 +40,9 @@
             this.bnfprgrsbar_süre = new Bunifu.Framework.UI.BunifuProgressBar();
             this.pcrebxCikis = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bfnbtn_basla = new Bunifu.Framework.UI.BunifuTileButton();
+            this.lbl_ad = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_soruSayisi = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bnftxt_Soru = new Bunifu.Framework.BunifuCustomTextbox();
@@ -47,13 +50,11 @@
             this.B = new Bunifu.Framework.UI.BunifuFlatButton();
             this.C = new Bunifu.Framework.UI.BunifuFlatButton();
             this.D = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.lbl_ad = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bfnbtn_basla = new Bunifu.Framework.UI.BunifuTileButton();
+            this.lblsinavId = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcrebxCikis)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -138,6 +139,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gray;
+            this.panel1.Controls.Add(this.lblsinavId);
             this.panel1.Controls.Add(this.bfnbtn_basla);
             this.panel1.Controls.Add(this.lbl_ad);
             this.panel1.Controls.Add(this.pictureBox2);
@@ -153,6 +155,48 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(241, 620);
             this.panel1.TabIndex = 22;
+            // 
+            // bfnbtn_basla
+            // 
+            this.bfnbtn_basla.BackColor = System.Drawing.Color.White;
+            this.bfnbtn_basla.color = System.Drawing.Color.White;
+            this.bfnbtn_basla.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bfnbtn_basla.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bfnbtn_basla.Enabled = false;
+            this.bfnbtn_basla.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.bfnbtn_basla.ForeColor = System.Drawing.Color.SeaGreen;
+            this.bfnbtn_basla.Image = ((System.Drawing.Image)(resources.GetObject("bfnbtn_basla.Image")));
+            this.bfnbtn_basla.ImagePosition = 21;
+            this.bfnbtn_basla.ImageZoom = 50;
+            this.bfnbtn_basla.LabelPosition = 43;
+            this.bfnbtn_basla.LabelText = "Başla";
+            this.bfnbtn_basla.Location = new System.Drawing.Point(9, 412);
+            this.bfnbtn_basla.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.bfnbtn_basla.Name = "bfnbtn_basla";
+            this.bfnbtn_basla.Size = new System.Drawing.Size(225, 58);
+            this.bfnbtn_basla.TabIndex = 33;
+            this.bfnbtn_basla.Click += new System.EventHandler(this.bfnbtn_basla_Click_1);
+            // 
+            // lbl_ad
+            // 
+            this.lbl_ad.AutoSize = true;
+            this.lbl_ad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbl_ad.Location = new System.Drawing.Point(52, 198);
+            this.lbl_ad.Name = "lbl_ad";
+            this.lbl_ad.Size = new System.Drawing.Size(0, 24);
+            this.lbl_ad.TabIndex = 32;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.ErrorImage")));
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
+            this.pictureBox2.Location = new System.Drawing.Point(67, 54);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(121, 128);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 31;
+            this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -331,47 +375,14 @@
             this.D.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.D.Click += new System.EventHandler(this.D_Click_1);
             // 
-            // pictureBox2
+            // lblsinavId
             // 
-            this.pictureBox2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.ErrorImage")));
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
-            this.pictureBox2.Location = new System.Drawing.Point(67, 54);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(121, 128);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 31;
-            this.pictureBox2.TabStop = false;
-            // 
-            // lbl_ad
-            // 
-            this.lbl_ad.AutoSize = true;
-            this.lbl_ad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_ad.Location = new System.Drawing.Point(52, 198);
-            this.lbl_ad.Name = "lbl_ad";
-            this.lbl_ad.Size = new System.Drawing.Size(0, 24);
-            this.lbl_ad.TabIndex = 32;
-            // 
-            // bfnbtn_basla
-            // 
-            this.bfnbtn_basla.BackColor = System.Drawing.Color.White;
-            this.bfnbtn_basla.color = System.Drawing.Color.White;
-            this.bfnbtn_basla.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bfnbtn_basla.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bfnbtn_basla.Enabled = false;
-            this.bfnbtn_basla.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.bfnbtn_basla.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bfnbtn_basla.Image = ((System.Drawing.Image)(resources.GetObject("bfnbtn_basla.Image")));
-            this.bfnbtn_basla.ImagePosition = 21;
-            this.bfnbtn_basla.ImageZoom = 50;
-            this.bfnbtn_basla.LabelPosition = 43;
-            this.bfnbtn_basla.LabelText = "Başla";
-            this.bfnbtn_basla.Location = new System.Drawing.Point(9, 412);
-            this.bfnbtn_basla.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.bfnbtn_basla.Name = "bfnbtn_basla";
-            this.bfnbtn_basla.Size = new System.Drawing.Size(225, 58);
-            this.bfnbtn_basla.TabIndex = 33;
-            this.bfnbtn_basla.Click += new System.EventHandler(this.bfnbtn_basla_Click_1);
+            this.lblsinavId.AutoSize = true;
+            this.lblsinavId.Location = new System.Drawing.Point(140, 529);
+            this.lblsinavId.Name = "lblsinavId";
+            this.lblsinavId.Size = new System.Drawing.Size(0, 13);
+            this.lblsinavId.TabIndex = 34;
+            this.lblsinavId.Visible = false;
             // 
             // frm_OgrenciSinavEkran
             // 
@@ -394,8 +405,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcrebxCikis)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -422,5 +433,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private Bunifu.Framework.UI.BunifuCustomLabel lbl_ad;
         private Bunifu.Framework.UI.BunifuTileButton bfnbtn_basla;
+        private System.Windows.Forms.Label lblsinavId;
     }
 }

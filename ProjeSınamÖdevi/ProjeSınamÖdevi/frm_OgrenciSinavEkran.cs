@@ -26,6 +26,11 @@ namespace ProjeSınamÖdevi
         SinavBilgileriBusiness sinavlarBS = new SinavBilgileriBusiness();
         List<Sorular> eksikler;
 
+        OgrenciBusiness sinavIdBs = new OgrenciBusiness();
+        List<Ogrenciler> sinavId;
+
+        public Ogrenciler ogr;
+        OgrencilerDB ogrGiris;
 
         private void frm_SinavEkrani_Load(object sender, EventArgs e)
         {
@@ -52,7 +57,7 @@ namespace ProjeSınamÖdevi
         private void cevapKontrol(bool cevaplar)
         {
             OgrenciCevaplariBusiness ogrCevp = new OgrenciCevaplariBusiness();
-            ogrCevp.CevapKontrol((Convert.ToInt32(label1.Text)),bilgi[x].konu,cevaplar,Convert.ToInt32(label5.Text));
+            ogrCevp.CevapKontrol((Convert.ToInt32(label1.Text)),bilgi[x].konu,cevaplar,Convert.ToInt32(label5.Text), Convert.ToInt32(lblsinavId.Text));
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -161,7 +166,9 @@ namespace ProjeSınamÖdevi
                 {
                     cevapKontrol(false);
                 }
-                sinavlarBS.GecmisSinavlar((10-dogru), dogru);
+                sinavlarBS.GecmisSinavlar((10-dogru), dogru, Convert.ToInt32(lblsinavId.Text));
+                ogrGiris = new OgrencilerDB();
+                ogrGiris.OgrenciSinavIdsiGuncelle(Convert.ToInt32(lblsinavId.Text));
                 frm_OgrenciMenu frmOgrMenu = new frm_OgrenciMenu();
                 frmOgrMenu.Show();
                 this.Close();
@@ -175,6 +182,9 @@ namespace ProjeSınamÖdevi
             if (bfnbtn_basla.LabelText != "Sonraki Soru")
             {
                 timer1.Start();
+                lblsinavId.Text = "";
+                sinavId = sinavIdBs.SinavIdBilgisiGetir();
+                lblsinavId.Text = sinavId[0].sinavId.ToString();
                 bfnbtn_basla.LabelText = "Sonraki Soru";
             }
 
@@ -196,9 +206,13 @@ namespace ProjeSınamÖdevi
             {
                 if (x == 11)
                 {
-                    sinavlarBS.GecmisSinavlar(yanlis, dogru);
+                    sinavlarBS.GecmisSinavlar(yanlis, dogru , Convert.ToInt32(lblsinavId.Text));
                     MessageBox.Show("Geçmiş Olsun...Sınavınız Bitmiştir..");
-                    Application.Exit();
+                    ogrGiris = new OgrencilerDB();
+                    ogrGiris.OgrenciSinavIdsiGuncelle(Convert.ToInt32(lblsinavId.Text));
+                    frm_OgrenciMenu ogrMenu = new frm_OgrenciMenu();
+                    ogrMenu.Show();
+                    this.Close();
                 }
                 else
                 {
@@ -242,7 +256,10 @@ namespace ProjeSınamÖdevi
                 }
                 else
                 {
-                    sinavlarBS.GecmisSinavlar(yanlis, dogru);
+                    sinavlarBS.GecmisSinavlar(yanlis, dogru, Convert.ToInt32(lblsinavId.Text));
+                    ogrGiris = new OgrencilerDB();
+
+                    ogrGiris.OgrenciSinavIdsiGuncelle(Convert.ToInt32(lblsinavId.Text));
                     MessageBox.Show("Geçmiş Olsun...Sınavınız Bitmiştir..");
                     frm_OgrenciMenu ogrMenu = new frm_OgrenciMenu();
                     ogrMenu.Show();

@@ -37,19 +37,44 @@ namespace DataLibrary
             return ogr;
         }
 
-        public Ogrenciler OgrenciSinavIdsiGuncelle()
+
+        public List<Ogrenciler> SinavIdBilgisi()
+        {
+            List<Ogrenciler> sinavId = new List<Ogrenciler>();
+            using (var connection = Database.BaglantiGetir())
+            {
+                var comm = new SqlCommand("SELECT * FROM tbl_ogrenciler WHERE ogrNo = @ogr", connection);
+                comm.Parameters.Add(new SqlParameter("@ogr", GirisYapanBilgileri.ogrninNosu));
+                using (var reader = comm.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Ogrenciler sinavIdİcerik = new Ogrenciler();
+                        sinavIdİcerik.sinavId = Convert.ToInt32(reader["sinavId"]);
+                        sinavId.Add(sinavIdİcerik);
+                    }
+                }
+                connection.Close();
+            }
+            return sinavId;
+        }
+
+
+        public Ogrenciler OgrenciSinavIdsiGuncelle(int sinavId)
         {
             Ogrenciler ogr = null;
             using (var connection = Database.BaglantiGetir())
             {
                 var comm = new SqlCommand("update tbl_ogrenciler set sinavId =@id where ogrNo=@ogrNo", connection);
                 comm.Parameters.Add(new SqlParameter("@ogrNo", GirisYapanBilgileri.ogrninNosu));
-                comm.Parameters.Add(new SqlParameter("@id",(Convert.ToInt32(GirisYapanBilgileri.sınavId)+1)));
+                comm.Parameters.Add(new SqlParameter("@id",Convert.ToInt32(sinavId)+1));
                 comm.ExecuteNonQuery();
                 connection.Close();
             }
             return ogr;
         }
+
+
         
     }
 }

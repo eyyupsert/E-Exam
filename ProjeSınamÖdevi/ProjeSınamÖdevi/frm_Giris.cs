@@ -32,6 +32,7 @@ namespace ProjeSınamÖdevi
             {
                 ogrGiris = new OgrencilerDB();
                 ogr = ogrGiris.OgrenciGetir(bnf_txtKullaniciAd.Text, bnf_txtKullaniciSifre.Text);
+
                 if (ogr != null && ogr.ogrKullaniciAdi == bnf_txtKullaniciAd.Text && ogr.ogrSifre == bnf_txtKullaniciSifre.Text)
                 {
                     GirisYapanBilgileri.ogrninKulAdi = bnf_txtKullaniciAd.Text;
@@ -43,11 +44,13 @@ namespace ProjeSınamÖdevi
                     frm.Show();
                     this.Hide();
                 }
+
                 else
                 {
                     MessageBox.Show("Hatali Giris");
                 }
             }
+
             else if (mtrdibtnOgretmen.Checked == true)
             {
                 ogrtmnGiris = new OgretmenDB();
@@ -66,31 +69,8 @@ namespace ProjeSınamÖdevi
             else
                 MessageBox.Show("Lütfen Seçim Yapınız !!");
         }
-        
-        private void bnf_txtOgrparola_Enter(object sender, EventArgs e)
-        {
-            bnf_txtKullaniciSifre.Text = "";
-        }
 
-        private void bnf_txtOgrtmenAd_Enter(object sender, EventArgs e)
-        {
-            bnf_txtKullaniciAd.Text = "";
-        }
 
-        private void bnf_txtOgrtmenSifre_Enter(object sender, EventArgs e)
-        {
-            bnf_txtKullaniciSifre.Text = "";
-        }
-
-        private void bnf_txtOgradi_MouseClick(object sender, MouseEventArgs e)
-        {
-            bnf_txtKullaniciAd.Text = "";
-        }
-
-        private void mtrdibtnOgretmen_MouseLeave(object sender, EventArgs e)
-        {
-            mtrdibtnOgretmen.ForeColor = Color.White;
-        }
 
         private void mtrbtnOgrenci_MouseLeave(object sender, EventArgs e)
         {
@@ -102,16 +82,31 @@ namespace ProjeSınamÖdevi
             mtrbtnOgrenci.ForeColor = Color.SeaGreen;
         }
 
+
         private void mtrdibtnOgretmen_MouseMove(object sender, MouseEventArgs e)
         {
             mtrdibtnOgretmen.ForeColor = Color.SeaGreen;
         }
-        
+
+        private void mtrdibtnOgretmen_MouseLeave(object sender, EventArgs e)
+        {
+            mtrdibtnOgretmen.ForeColor = Color.White;
+        }
+
+
         private void pcrebxCikis_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        private void bnf_txtKullaniciSifre_Enter(object sender, EventArgs e)
+        {
+            bnf_txtKullaniciSifre.Text = "";
+        }
 
+        private void bnf_txtKullaniciAd_MouseClick(object sender, MouseEventArgs e)
+        {
+            bnf_txtKullaniciAd.Text = "";
+        }
     }
 }
