@@ -23,15 +23,6 @@ namespace ProjeSınamÖdevi
         }
         public Ogrenciler ogr;
         OgrencilerDB ogrDB;
-        
-        private void btnSinavOl_Click(object sender, EventArgs e)
-        {
-            ogrDB = new OgrencilerDB();
-            ogr = ogrDB.OgrenciSinavIdsiGuncelle();
-            frm_OgrenciSinavEkran frmsinav = new frm_OgrenciSinavEkran();
-            frmsinav.Show();
-            this.Hide();
-        }
 
         private void btnIstatistikGor_Click(object sender, EventArgs e)
         {
@@ -42,17 +33,32 @@ namespace ProjeSınamÖdevi
 
         private void frm_OgrenciMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
+
+        }
+
+        private void bnfbtn_Sinavol_Click(object sender, EventArgs e)
+        {
+            ogrDB = new OgrencilerDB();
+            ogr = ogrDB.OgrenciSinavIdsiGuncelle();
+            frm_OgrenciSinavEkran frmsinav = new frm_OgrenciSinavEkran();
+            frmsinav.Show();
+            this.Hide();
+        }
+
+        private void frm_OgrenciMenu_Load(object sender, EventArgs e)
+        {
+            bnflbl_ogrAd.Text = (GirisYapanBilgileri.ogrAd + " " + GirisYapanBilgileri.ogrSoyad);
+        }
+
+        private void pcrebxCikis_Click(object sender, EventArgs e)
+        {
             DialogResult secenek = MessageBox.Show("Ana menüye dönmek istiyor musunuz ? ", "Uyarı !!!", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
             if (secenek == DialogResult.Yes)
             {
                 frm_Giris frmGiris = new frm_Giris();
                 frmGiris.Show();
-                e.Cancel = false;
-            }
-            else
-            {
-                e.Cancel = true;
+                this.Close();
             }
         }
     }

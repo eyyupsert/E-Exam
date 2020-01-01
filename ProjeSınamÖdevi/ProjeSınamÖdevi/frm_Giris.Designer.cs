@@ -113,7 +113,7 @@
             this.pcrebxCikis.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pcrebxCikis.ErrorImage")));
             this.pcrebxCikis.Image = ((System.Drawing.Image)(resources.GetObject("pcrebxCikis.Image")));
             this.pcrebxCikis.InitialImage = ((System.Drawing.Image)(resources.GetObject("pcrebxCikis.InitialImage")));
-            this.pcrebxCikis.Location = new System.Drawing.Point(384, 2);
+            this.pcrebxCikis.Location = new System.Drawing.Point(385, -1);
             this.pcrebxCikis.Name = "pcrebxCikis";
             this.pcrebxCikis.Size = new System.Drawing.Size(32, 31);
             this.pcrebxCikis.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

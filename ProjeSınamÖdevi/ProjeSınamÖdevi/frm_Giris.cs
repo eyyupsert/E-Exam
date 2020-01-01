@@ -34,9 +34,11 @@ namespace ProjeSınamÖdevi
                 ogr = ogrGiris.OgrenciGetir(bnf_txtKullaniciAd.Text, bnf_txtKullaniciSifre.Text);
                 if (ogr != null && ogr.ogrKullaniciAdi == bnf_txtKullaniciAd.Text && ogr.ogrSifre == bnf_txtKullaniciSifre.Text)
                 {
-                    GirisYapanBilgileri.ogrninAdi = bnf_txtKullaniciAd.Text;
+                    GirisYapanBilgileri.ogrninKulAdi = bnf_txtKullaniciAd.Text;
                     GirisYapanBilgileri.ogrninNosu = ogr.ogrNo.ToString();
                     GirisYapanBilgileri.sınavId = ogr.sinavId;
+                    GirisYapanBilgileri.ogrAd = ogr.ogrAdi;
+                    GirisYapanBilgileri.ogrSoyad = ogr.ogrSoyad;
                     frm_OgrenciMenu frm = new frm_OgrenciMenu();
                     frm.Show();
                     this.Hide();
