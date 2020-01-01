@@ -153,7 +153,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_OgretmenMenusu";
             this.Text = "frm_OgretmenMenusu";
-            this.Load += new System.EventHandler(this.frm_OgretmenMenusu_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcrebxCikis)).EndInit();

@@ -50,10 +50,5 @@ namespace ProjeSınamÖdevi
                 this.Close();
             }
         }
-
-        private void frm_OgretmenMenusu_Load(object sender, EventArgs e)
-        {
-            
-        }
     }
 }

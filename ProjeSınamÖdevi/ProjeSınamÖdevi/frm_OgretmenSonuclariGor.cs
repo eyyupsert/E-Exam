@@ -24,16 +24,30 @@ namespace ProjeSınamÖdevi
         List<SinavBilgileri> sinavBilgi;
         List<SinavBilgileri> ogrSinavSonuclari;
         int secilenOgrNo = 0;
+        
 
-        private void btnGoruntule_Click(object sender, EventArgs e)
+
+        private void frm_OgretmenSonuclariGor_Load(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem == null)
-            { MessageBox.Show("Lütfen Sonuçlarını Görüntülemek İstediğiniz Öğrencinin Numarasını Seçiniz");}
+            sinavBilgi = sinavBS.OgretmenSonuclariGoruntule();
+            for (int i = 0; i < sinavBilgi.Count; i++)
+            {
+                bunifuDropdown1.Items.Add((sinavBilgi[i].ogrNo));
+            }
+        }
+
+
+
+
+        private void btnGoruntule_Click_1(object sender, EventArgs e)
+        {
+            if (bunifuDropdown1.selectedIndex == -1)
+            { MessageBox.Show("Lütfen Sonuçlarını Görüntülemek İstediğiniz Öğrencinin Numarasını Seçiniz"); }
             else
             {
                 for (int i = 0; i < sinavBilgi.Count; i++)
                 {
-                    if (sinavBilgi[i].ogrNo == Convert.ToInt32(comboBox1.SelectedItem))
+                    if (sinavBilgi[i].ogrNo == Convert.ToInt32(bunifuDropdown1.selectedValue))
                     {
                         secilenOgrNo = sinavBilgi[i].ogrNo;
                     }
@@ -58,21 +72,16 @@ namespace ProjeSınamÖdevi
                     chr_SonucGrafik.Series["Başarı Oranları"].Points.AddXY(((ogrSinavSonuclari[k].sinavId) + 1).ToString() + ". Sınav", ogrSinavSonuclari[k].basYuzdesi);
                 }
             }
+
         }
 
-        private void frm_OgretmenSonuclariGor_Load(object sender, EventArgs e)
-        {
-            sinavBilgi = sinavBS.OgretmenSonuclariGoruntule();
-            for (int i = 0; i < sinavBilgi.Count; i++)
-            {
-               comboBox1.Items.Add((sinavBilgi[i].ogrNo));
-            }
-        }
 
-        private void frm_OgretmenSonuclariGor_FormClosing(object sender, FormClosingEventArgs e)
+
+        private void pcrebxCikis_Click(object sender, EventArgs e)
         {
             frm_OgretmenMenusu frmMenu = new frm_OgretmenMenusu();
             frmMenu.Show();
+            this.Close();
         }
     }
 }
