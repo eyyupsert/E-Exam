@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.489
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29326.143
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjeSınamÖdevi", "ProjeSınamÖdevi\ProjeSınamÖdevi.csproj", "{F99655AF-405D-49F3-B084-8EB645A849A4}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonLibrary", "CommonLibrary\CommonLibrary.csproj", "{5A24F0D6-E4B5-464B-AFD2-8CD34417DED0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLibrary", "DataLibrary\DataLibrary.csproj", "{E88AB23F-FE6F-4313-B5BF-DAADE63C4E20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SinamaTesti", "SinamaTesti\SinamaTesti.csproj", "{E4D9643E-87E3-404E-9DCC-2100EB6BC878}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{E88AB23F-FE6F-4313-B5BF-DAADE63C4E20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E88AB23F-FE6F-4313-B5BF-DAADE63C4E20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E88AB23F-FE6F-4313-B5BF-DAADE63C4E20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4D9643E-87E3-404E-9DCC-2100EB6BC878}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4D9643E-87E3-404E-9DCC-2100EB6BC878}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4D9643E-87E3-404E-9DCC-2100EB6BC878}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4D9643E-87E3-404E-9DCC-2100EB6BC878}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
